@@ -1,0 +1,275 @@
+/* Remove the maximum width Instructure put in there */
+body:not(.full-width):not(.outcomes) .ic-Layout-wrapper {
+	max-width: none;
+}
+
+/* Add some margin to the bottom of the UCF logo to make it look better with the 5/14/2016 update */
+.ic-app-header__logomark {
+	margin-bottom: 10px;
+}
+
+/* Make left hand submenu a slight grey to separate them from the rest of the UI */
+.with-left-side #left-side {
+	background-color: #f7f7f7 !important;
+}
+
+/* Make hidden course menu items slightly darker to fix contrast issues */
+#section-tabs .section-tab-hidden a {
+	color: #888888;
+	font-weight: 300;
+	background: none;
+}
+
+/* Make the normal course menu items black to help distinguish them from the hidden items */
+.list-view>ul>li>a, .list-view>nav>ul>li>a {
+	color: #000000;
+	font-weight: 400;
+}
+
+/* Interface overlay for main nav drawer */
+.ReactTray__Overlay {
+	background: rgba(32,42,48,0.8);
+}
+
+/* Breadcrumbs, and footer.  Swap margin for padding so bottom border covers the whole top bar. */
+.ic-app-nav-toggle-and-crumbs,
+.ic-app-footer {
+	margin: 0px;
+	padding: 12px 24px;
+}
+
+/* Right Sidebar Logo */
+.ic-sidebar-logo__image {
+	max-width: 230px;
+}
+
+.ic-app-nav-toggle-and-crumbs::after{
+	width: 240px;
+	height: 21px;
+	content: '';
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAAYCAYAAAALSROXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowMTgwMTE3NDA3MjA2ODExODcxRkFGNDFERTI1RkVBQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDowNzcwMzI2Njg2NEYxMUU1OUUwMkUxQUU2NjFFRDc3RiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowNzcwMzI2NTg2NEYxMUU1OUUwMkUxQUU2NjFFRDc3RiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjAyODAxMTc0MDcyMDY4MTE4NzFGQUY0MURFMjVGRUFBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjAxODAxMTc0MDcyMDY4MTE4NzFGQUY0MURFMjVGRUFBIi8+IDwvcmRmOkRlc2NyaXB0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');
+	background-size: 240px 21px;
+	background-repeat: no-repeat;
+}
+
+/* Fix the issue with the right sidebar logo where it breaks on full-width LTIs */
+.ic-app-nav-toggle-and-crumbs>#breadcrumbs {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+}
+
+/* Makes the tiles shorter */
+.ic-DashboardCard__header_hero {
+	height: 60px;
+}
+
+/* Fix calendar entry titles */
+.event-details-header h3 {
+	line-height: 1.5;
+}
+
+/* Display unordered list bullets in calendar events */
+.event-details .event-detail-overflow ul {
+	margin: 0 0 5px 25px;
+	list-style: disc;
+}
+
+/* Page Content */
+.user_content h3, .user_content .h3, .mceContentBody h3, .mceContentBody .h3 {
+	margin-bottom: 6px;
+	line-height: 1.5;
+}
+
+/* Module Navigation */
+#content #sequence_footer {
+	padding-top: 45px;
+}
+
+/* Course Themes */
+.ucf_blue_box,
+.ucf_red_box,
+.ucf_yellow_box {
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 2px solid black;
+	border-radius: 5px;
+}
+
+ol.ucf_blue_box,
+ul.ucf_blue_box,
+ol.ucf_red_box,
+ul.ucf_red_box,
+ol.ucf_yellow_box,
+ul.ucf_yellow_box  {
+	padding-left: 30px;
+}
+
+.ucf_blue_box {
+	background-color: #e3ebf4;
+	border-color: #a8c4df;
+}
+
+.ucf_red_box {
+	background-color: #f2dede;
+	border-color: #da9695;
+}
+
+.ucf_yellow_box {
+	background-color: #fcf8e3;
+	border-color: #f3e28c;
+}
+
+ul.ucf_blue_bullet {
+	list-style-image: url('https://lti.online.ucf.edu/images/dbsk_bullet_blue.png');
+}
+
+ul.ucf_blue_bullet ul {
+	list-style-type: disc;
+	list-style-image: none;
+}
+
+.ucf_dbsk_bullet {
+	background: url("https://lti.online.ucf.edu/images/dbskbullet.gif") no-repeat left center;
+	padding-left: 30px;
+}
+
+.ucf_blue_threedot, .ucf_gold_threedot {
+	clear: both;
+	float: none;
+	width: 100%;
+	margin: 1.4em 0;
+	border: none;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.ucf_blue_threedot {
+	height: 13px;
+	background-image: url('https://lti.online.ucf.edu/images/dbsk_bar.jpg');
+}
+
+.ucf_gold_threedot {
+	height: 15px;
+	background-image: url('https://lti.online.ucf.edu/images/ucf_gold_threedot.jpg');
+}
+
+h1.ucf_blue_heading,
+h2.ucf_blue_heading,
+h3.ucf_blue_heading,
+h4.ucf_blue_heading,
+h5.ucf_blue_heading,
+h6.ucf_blue_heading {
+	color: #446f9a;
+}
+
+/* Accordion Stuff */
+.ucf-accordion h3 {
+  margin: 2px 0 0 0;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.ucf-accordion .accordion-control {
+  box-sizing: border-box;
+  display: block;
+  background-color: #f2f2f2;
+  width: 100%;
+  border: 1px solid #c7cdd1;
+  color: #333;
+  text-decoration: none !important;
+  padding: 10px;
+  transition: background-color 0.2s ease-in;
+}
+
+.ucf-accordion .accordion-control:focus,
+.ucf-accordion .accordion-control:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
+
+.ucf-accordion .accordion-control:after {
+  float: right;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.ucf-accordion .accordion-control[aria-expanded="true"] {
+  border-color: #1e7bc8;
+  background-color: #0078bd;
+  color: white;
+}
+.ucf-accordion .accordion-control[aria-expanded="true"]:after {
+  content:'\2013';
+}
+
+.ucf-accordion .accordion-control[aria-expanded="false"]:after {
+  content:'+';
+}
+
+.ucf-accordion .accordion-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #c7cdd1;
+  border-top: none;
+}
+
+/* Liz's stuff here */
+
+#stop_webcam {
+	vertical-align: top;
+	display: block;
+	margin: 0 auto;
+	margin-top: -10px;
+	width: 100%;
+
+}
+
+/* Icomoon camera glyph */
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?aj1eyp');
+	src:url('fonts/icomoon.eot?#iefixaj1eyp') format('embedded-opentype'),
+		url('fonts/icomoon.woff?aj1eyp') format('woff'),
+		url('fonts/icomoon.ttf?aj1eyp') format('truetype'),
+		url('fonts/icomoon.svg?aj1eyp#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#camera_icon {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 1.6em;
+	vertical-align: middle;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#camera_icon:before {
+	content: "\e600";
+}
+
+/* Fix size of breadcrumbs background on smaller screens */
+@media only screen and (min-width: 1200px){
+.ic-app-nav-toggle-and-crumbs {
+	padding: 16px 24px;
+}
+}
+
+[aria-label="More External Tools"] button i {
+    background-image: url('https://webcourses.ucf.edu/images/quick_links.png') !important;
+}
