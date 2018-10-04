@@ -72,7 +72,7 @@ public class PacSimMinimax implements PacAction {
             List<Position> PosList = new ArrayList<Position>();
             List<Point> pacList;
             List<Point> currentGhosts;
-            List<List<Point>> ghostList;
+            List<Node<Point>> ghostList;
             int de = d;
 
             pacLoc = PacUtils.findPacman( grid ).getLoc();
@@ -127,34 +127,48 @@ public class PacSimMinimax implements PacAction {
             //return null;
       }
 
-      public List<Point> allPossibleMovesStart( Point loc, PacCell[][] grid, int de ) {
+      public Node<Point> allPossibleMovesStart( Point loc, PacCell[][] grid, int de ) {
 
-            List<Point> start = new ArrayList<Point>();
-            start.add( loc );
+            Node<Point> start = new Node<Point>( loc );
 
-            return allPossibleMoves( start, grid, de );
+            allPossibleMoves( start, grid, de );
+
+            return start;
       }
 
-      public List<Point> allPossibleMoves( List<Point> loc, PacCell[][] grid, int de ) {
+      public void allPossibleMoves( Node<Point> node, PacCell[][] grid, int de ) {
 
-            List<Point> moves;
+            Node<Point> child;
 
-            if (de == 0) { return loc; }
+            if (de == 0) { return ; }
 
             moves = new ArrayList<Point>();
 
-            for ( int i = 0; i < loc.size(); i++ ) {
+            for ( int j = 0; j < 4; j++ ) {
 
-                  for ( int j = 0; j < 4; j++ ) {
+                  if ( checkSpot( node.data.x + moveX[j], node.data.y + moveY[j], grid ) ) {
 
-                        if ( checkSpot( loc.get(i).x + moveX[j], loc.get(i).y + moveY[j], grid ) ) {
+                        child = new Node( new Point( node.data.x + moveX[j], node.data.y + moveY[j] ) );
+                        node.addChild(child);
 
-                              moves.add( new Point( loc.get(i).x + moveX[j], loc.get(i).y + moveY[j] ) );
-                        }
+                        allPossibleMoves( child, grid, de - 1 );
                   }
             }
+      }
 
-            return allPossibleMoves( moves, grid, de - 1 );
+      public void printTree( Node<Point> node, PacCell[][] grid ) {
+
+            if ( node == null ) { return; }
+
+            System.out.println();
+            System.out.printf( node.data );
+
+            ListIterator<Node> chi = node.getChildren().listIterator();
+
+            while (chi.hasNext()) {
+
+                  PrintTree( chi.next(), grid );
+            }
       }
 
       //checks if the spot is valid for a pacman or a ghost to move to -- needs to be unoccupied or contain food/power
